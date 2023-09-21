@@ -1,0 +1,210 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: rgb(58, 54, 54);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+header{
+    background-color: rgb(15, 15, 15);
+    color: white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    padding: 20px 40px;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 10px white;
+    position: sticky;
+    z-index: 80;
+}
+
+.logo{
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+
+.logo::after{
+    content: '  ABOUT';
+    position: relative;
+    border-left: 2px solid white;
+    font-weight: 1;
+    left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.group{
+    display: flex;
+    align-items: center;
+}
+
+header ul{
+    position: relative;
+    display: flex;
+    gap: 30px;
+    list-style-type: none;
+}
+
+header ul li a{
+    text-decoration: none;
+    position: relative;
+    font-size: 0.9em;
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+header ul li a::before{
+    content: '';
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    bottom: -3px;
+    background-color: white;
+    transform: scaleX(0);
+    transition: transform 0.5s ease-in-out;
+    transform-origin: right;
+}
+
+header ul li a:hover::before{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.menuBar{
+    position: relative;
+    display: none;
+}
+
+@media (max-width: 800px) {
+    .menuBar{
+        position: absolute;
+        display: block;
+        right: 15%;
+        font-size: 1.2em;
+        cursor: pointer;
+        transform: translateX(60px);
+        z-index: 20;
+    }
+
+    header .navBar{
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        left: 0%;
+    }
+
+    header.open .navBar{
+        top: 80px;
+        opacity: 1;
+        visibility: visible;
+        display: flex;
+        flex-direction: column;
+        right: 0;
+        background-color: rgb(15, 15, 15);
+        width: 35%;
+        border-bottom-right-radius: 20px;
+        box-shadow: 3px 2px 5px white;
+        height: 14em;
+        font-size: 1rem;
+        padding: 20px 60px;
+        z-index: 20;
+        transition: 1s ease-in-out;
+    }
+}
+
+.obox{
+    position: relative;
+    top: 20px;
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.img{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background-color: rgb(58, 54, 54);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.img .card{
+    position: relative;
+    width: 100%;
+    height: 240px;
+    border-radius: 20px;
+    background-color: aquamarine;
+    background-image: var(--bck);
+    background-size: cover;
+}
+
+.info{
+    position: relative;top: 50px;
+    padding: 20px 40px;
+    color: aliceblue;
+    letter-spacing: 2px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.img .content{
+    position: relative;
+    width: 100%;
+    height: 150px;
+    background-color: black;
+    border-radius: 20px;
+    border-top-left-radius: 0;
+    padding: 0 35px;
+}
+
+.img .content .ibox{
+    position: absolute;
+    top: -100px;
+    width: 150px;
+    height: 100px;
+    left: 0;
+    border-right: 10px solid rgb(58, 54, 54);
+    border-top: 10px solid rgb(58, 54, 54);
+    border-top-right-radius: 20px;
+    background-color: black;
+}
+
+.img .content .ibox a{
+    position: relative;
+    background-color: white;
+    color: black;
+    padding: 10px 10px;
+    margin: 15px 15px;
+    display: block;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 0 5px white;
+} 
+
+.content ul{
+    color: white;
+    padding-top: 20px;
+}
+
+.content ul li{
+    padding: 8px;
+}
