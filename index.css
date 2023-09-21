@@ -1,0 +1,461 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: rgb(58, 54, 54);
+    min-height: 100vh;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+header{
+    background-color: rgb(15, 15, 15);
+    color: white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    padding: 20px 40px;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 10px white;
+    position: sticky;
+    z-index: 80;
+}
+
+.logo{
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+
+.group{
+    display: flex;
+    align-items: center;
+}
+
+header ul{
+    position: relative;
+    display: flex;
+    gap: 30px;
+    list-style-type: none;
+}
+
+header ul li a{
+    text-decoration: none;
+    position: relative;
+    font-size: 0.9em;
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+header ul li a::before{
+    content: '';
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    bottom: -3px;
+    background-color: white;
+    transform: scaleX(0);
+    transition: transform 0.5s ease-in-out;
+    transform-origin: right;
+}
+
+header ul li a:hover::before{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+header .search{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    cursor: pointer;
+    font-size: 1.3em;
+}
+
+.searchBar{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 100%;
+    width: 100%;
+    height: 100%;
+    padding: 0px 30px;
+    color: white;
+    background-color: rgb(15, 15, 15);
+    transition: .5s ease-in-out;
+}
+
+.searchBar input{
+    width: 100%;
+    height: 40px;
+    outline: none;
+    border: none;
+    color: white;
+    background-color: rgb(15, 15, 15);
+    font-size: 1.2em;
+    border-bottom: 1px solid white;
+    transition: .5s ease-in-out;
+    z-index: 1;
+}
+
+.searchBar.active{
+    right: 0;
+}
+
+.searchBtn{
+    position: relative;
+    top: 2px;
+    left: 30px;
+    transition: .5s ease-in-out;
+}
+
+.searchBtn.active{
+    left: -4px;
+}
+
+.closeBtn{
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+    scale: 0;
+}
+
+.closeBtn.active{
+    position: relative;
+    top: 2px;
+    opacity: 1;
+    visibility: visible;
+    transition: 0.5s;
+    scale: 1;
+}
+
+.menuBar{
+    position: relative;
+    display: none;
+}
+
+@media (max-width: 800px) {
+    .menuBar{
+        position: absolute;
+        display: block;
+        font-size: 1.2em;
+        cursor: pointer;
+        transform: translateX(60px);
+        z-index: 20;
+    }
+
+    header .navBar{
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        left: 0%;
+    }
+
+    header.open .navBar{
+        top: 80px;
+        opacity: 1;
+        visibility: visible;
+        display: flex;
+        flex-direction: column;
+        right: 0;
+        background-color: rgb(15, 15, 15);
+        width: 35%;
+        border-bottom-right-radius: 20px;
+        box-shadow: 3px 2px 5px white;
+        height: 18em;
+        font-size: 1rem;
+        padding: 20px 60px;
+        z-index: 20;
+        transition: 1s ease-in-out;
+    }
+}
+
+.content .photoContainer {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.content .photoContainer img{
+    background-size: cover;
+}
+
+.content .slidePhoto {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 1s ease-in-out;
+}
+
+.content .slidePhoto.active {
+    opacity: 0.8;
+}
+
+button{
+    cursor: pointer;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    transform: translateY(-550%);
+    box-shadow: 0 0 15px black,
+    0 0 15px black,
+    0 0 15px black,
+    0 0 15px black;
+    opacity: 0.5;
+    border: transparent;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.btn{
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn:hover{
+    transition: 0.2s linear;
+    color: black;
+}
+
+.text{
+    display: grid;
+    place-items: center;
+    color: white;
+    font-weight: 800;
+    font-size: 1.5rem;
+    min-width: 200px;
+    letter-spacing: 8px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.text span{
+    position: relative;
+    top: 10px;
+}
+
+.text span::before{
+    content: 'Panoramic';
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(177, 255, 219);
+    animation: text 20s infinite;
+    letter-spacing: 20px;
+}
+
+.text span::after{
+    content: '';
+    position: absolute;
+    width: calc(100% + 15px);
+    height: 2rem;
+    background-color: rgb(58, 54, 54);
+    border-left: 2px solid white;
+    right: -10px;
+    animation: cursor .8s infinite, typing 20s steps(11) infinite;
+}
+
+@keyframes cursor{
+    to{
+        border-left: 2px solidblack ;
+    }
+}
+
+@keyframes text{
+    0%,20%{
+        content: 'Panoramic';
+    }
+    21%,40%{
+        content: 'Aerial';
+    }
+    41%,60%{
+        content: 'Evocative';
+    }
+    61%,80%{
+        content: 'Picturesque';
+    }
+    81%,100%{
+        content: 'Attractive';
+    }
+}
+
+@keyframes typing{
+    10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+        width: 0;
+    }
+    5%,20%,25%,40%,45%,60%,65%,80%,85%,100%{
+        width: calc(100% + 11px);
+    }
+}
+
+.boxes{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 100px 50px;
+    padding: 100px 50px;
+}
+
+.box{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 20px;
+    width: 350px;
+    height: 300px;
+    background-color: rgb(15, 15, 15);
+    border-radius: 20px;
+    transition: 0.8s;
+    cursor: pointer;
+    box-shadow: 0 0 3px white;
+}
+
+.boxes .box:hover{
+    height: 400px;
+    transition: 0.8s;
+}
+
+.boxes .box .image{
+    position: absolute;
+    top: 30px;
+    width: 300px;
+    height: 200px;
+    background-color: black;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgb(255, 255, 255);
+    transition: 0.8s;
+}
+
+.boxes .box:hover .image{
+    top: -100px;
+    scale: 0.75;
+    transition: 0.8s;
+}
+
+.boxes .box .image img{
+    position: absolute;
+    border-radius: 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.boxes .box .info{
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 250px;
+    padding: 0 30px;
+    overflow: hidden;
+    height: 28px;
+    font-size: 1em;
+    transition: 0.5s;
+}
+
+.boxes .box:hover .info{
+    top: 150px;
+    height: 250px;
+}
+
+.boxes .box .info h2{
+    color: white;
+    font-size: 1.5em;
+    letter-spacing: 3px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.boxes .box .info p{
+    position: relative;
+    color: white;
+    top: 15px;
+}
+
+.boxes .box .info a{
+    position: relative;
+    text-decoration: none;
+    top: 40px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    display: inline-block;
+    background-color: cadetblue;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: aliceblue;
+    transition: 0.5s;
+    box-shadow: 0 0 5px rgb(255, 255, 255);
+}
+
+.boxes .box .info a:hover{
+    background-color: aliceblue;
+    color: cadetblue;
+    transition: 0.5s;
+    box-shadow: 0 0 5px black;
+}
+
+footer{
+    background-color: rgb(15, 15, 15);
+    color: white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    padding: 50px 40px;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 10px white;
+    position: sticky;
+    z-index: 80;
+}
+
+.foot{
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    list-style-type: none;
+}
+
+.foot li{
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.mail, .phone, .address{
+    text-transform: uppercase;
+}
+
+.foot li span{
+    display: flex;
+    justify-content: baseline;
+}
+
+.foot li span a{
+    font-weight: 100;
+    color: aliceblue;
+    text-decoration: none;
+}
