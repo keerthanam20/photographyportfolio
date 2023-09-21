@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio|About</title>
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">PORTFOLIO</a>
+        <div class="group">
+            <ul class="navBar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+            <ion-icon name="grid-outline" class="menuBar"></ion-icon>
+        </div>
+    </header>
+
+    <div class="obox">
+        <div class="img">
+            <div class="card" style="--bck: url('images/1.jpg');"></div>
+                <div class="content">
+                    <span class="ibox">
+                    <a href="#">MANAGER</a>
+                </span>
+                <ul>
+                    <li>Mr. Someone1</li>
+                    <li>Content</li>
+                    <li>Other Info</li>
+                </ul>
+                </div>
+        </div>
+
+        <div class="img">
+            <div class="card" style="--bck: url('images/2.jpg');"></div>
+                <div class="content">
+                    <span class="ibox">
+                    <a href="#">CHIEF EXECUTIVE</a>
+                </span>
+                <ul>
+                    <li>Mr. Someone2</li>
+                    <li>Content</li>
+                    <li>Other Info</li>
+                </ul>
+                </div>
+        </div>
+    
+        <div class="img">
+            <div class="card" style="--bck: url('images/3.jpg');"></div>
+                <div class="content">
+                    <span class="ibox">
+                        <a href="#">EXECUTIVE</a>
+                    </span>
+                    <ul>
+                    <li>Mr. Someone3</li>
+                    <li>Content</li>
+                    <li>Other Info</li>
+                </ul>
+                </div>
+        </div>
+    </div>
+
+    <p class="info" aria-readonly="true" aria-selected="false">
+        <b style="font-weight: 800;font-size: 1.5em;">ABOUT US |</b><br><br>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit enim est totam dolorem itaque perspiciatis facere dolorum omnis voluptate, minima, voluptatibus commodi nulla veniam natus rerum vel ad quod! Ea modi reiciendis, expedita nisi perferendis excepturi, quae odit laboriosam nostrum sapiente consequatur officiis, doloremque porro alias molestiae recusandae at? Nesciunt voluptates sunt nam voluptatem provident autem. Cumque doloribus atque ratione nisi deleniti eligendi tempore. In, odio quo. Assumenda accusamus, temporibus dolore consectetur minus ut animi! Quam, expedita quo doloremque ex dolore dolores maiores cum dolorum, similique dolorem amet autem ratione debitis! Tempore perspiciatis quasi eveniet sequi necessitatibus, nemo explicabo quas officiis iure animi magnam officia vel maxime, ullam minima placeat inventore molestiae alias illum reprehenderit porro, repudiandae dolorum? Eaque consequuntur quidem cum quod, ducimus illo sint pariatur impedit voluptas, blanditiis, et incidunt nisi doloremque aperiam veniam fugit tempora dolorum hic minus eos in assumenda? Maiores qui totam voluptates, tenetur a laudantium cumque. A tenetur placeat nobis repellat recusandae ipsum aliquam quos, iste quis molestiae incidunt obcaecati et fugiat, maxime iusto? Dignissimos tempora ratione porro, libero doloribus sapiente! Esse, tenetur expedita placeat id ullam minima laudantium. Doloribus sit pariatur aperiam fugit eligendi, odit, omnis tenetur quisquam quae atque architecto voluptas obcaecati!
+    </p>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script>
+    let menuBar = document.querySelector('.menuBar');
+    let header = document.querySelector('header');
+    let navBar = document.querySelector('.navBar');
+        menuBar.onclick = function(){
+        header.classList.toggle('open');
+    }
+    </script>
+</body>
+</html>
