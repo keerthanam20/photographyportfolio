@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Portfolio|Home</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">PORTFOLIO</a>
+        <div class="group">
+            <ul class="navBar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="search">
+                <span class="icon">
+                    <ion-icon name="search-outline" class="searchBtn"></ion-icon>
+                    <ion-icon name="close-outline" class="closeBtn"></ion-icon>
+                </span>
+            </div>
+            <ion-icon name="grid-outline" class="menuBar"></ion-icon>
+        </div>
+        <div class="searchBar">
+            <input type="search" name="searchBar" class="search" placeholder="Search...">
+        </div>
+    </header>
+    <div class="content" id="images">
+        <div class="photoContainer">
+            <div><img class="slidePhoto" src="images/1.jpg" alt="Slide 1" draggable="false"></div>
+            <img class="slidePhoto" src="images/2.jpg" alt="Slide 2" draggable="false">
+            <img class="slidePhoto" src="images/3.jpg" alt="Slide 3" draggable="false">
+            <img class="slidePhoto" src="images/4.jpg" alt="Slide 4" draggable="false">
+            <img class="slidePhoto" src="images/5.jpg" alt="Slide 5" draggable="false">
+        </div>
+    </div>
+
+    <div class="btn">
+        <button><div id="prev">&lt;</div></button>
+        <button><div id="next">&gt;</div></button>
+    </div>
+
+    <div class="text">
+        THE WORLD IS<span></span>
+    </div>
+
+    <div class="boxes">
+        <div class="box">
+            <div class="image"><img src="images/1.jpg" alt="Gallery 1"></div>
+            <div class="info">
+                <h2>LAKE VIEW</h2>
+                <p>The viewpoint refers to the position we take the photograph from. This will also be the position you place the viewer in when they are looking at your finished shot. The viewpoint can dramatically change the feel of the photograph.</p>
+                <a href="#">CLICK</a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="image"><img src="images/2.jpg" alt="Gallery 1"></div>
+            <div class="info">
+                <h2>SKY</h2>
+                <p>Sky blue is a shade of light blue comparable to that of a clear daytime sky.</p>
+                <a href="#">CLICK</a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="image"><img src="images/3.jpg" alt="Gallery 1"></div>
+            <div class="info">
+                <h2>TREES</h2>
+                <p>Nature photography is a wide range of photography taken outdoors and devoted to displaying natural elements such as landscapes, wildlife, plants, and close-ups of natural scenes and textures.</p>
+                <a href="#">CLICK</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="logo" id="contact">CONTACT US</div>
+            <ol class="foot">
+                <li><span class="mail">Email</span><span><a href="mailto://somebody@gmail.com"><i>somebody@gmail.com</i></a></span></li>
+                <li><span class="phone">Phone</span><span><a href="tel:+7483267890"><i>+91 9874560125</i></a></span></li>
+                <li><span class="address">Address</span><span><a href=""><i>#12, Housing Board<br>Bengaluru</i></a></span></li>
+            </ol>
+    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+<script>
+    let searchBtn = document.querySelector('.searchBtn');
+    let closeBtn = document.querySelector('.closeBtn');
+    let searchBar = document.querySelector('.searchBar');
+    let menuBar = document.querySelector('.menuBar');
+    let header = document.querySelector('header');
+    let navBar = document.querySelector('.navBar');
+
+    searchBtn.onclick = function(){
+        searchBar.classList.add('active');
+        searchBtn.classList.add('active');
+        closeBtn.classList.add('active');
+    }
+
+    closeBtn.onclick = function(){
+        searchBar.classList.remove('active');
+        searchBtn.classList.remove('active');
+        closeBtn.classList.remove('active');
+    }
+
+    menuBar.onclick = function(){
+        header.classList.toggle('open');
+    }
+
+    //Slide effect
+    const photos = document.querySelectorAll(".slidePhoto");
+    const prev = document.getElementById("prev");
+    const next = document.getElementById("next");
+
+    let currIndex = 0;
+
+    function move(index){
+        photos.forEach((photo,i) => {
+        if(i===index)
+        {
+            photo.classList.add("active");
+        }
+        else{
+            photo.classList.remove("active");
+        }
+    });
+    currIndex = index;
+    }
+
+    prev.addEventListener("click",()=>{
+        currIndex = (currIndex - 1 + photos.length) % photos.length;
+        move(currIndex);
+    });
+
+    next.addEventListener("click",()=>{
+        currIndex = (currIndex + 1) % photos.length;
+        move(currIndex);
+    });
+
+    move(currIndex);
+</script>
+</body>
+</html>
